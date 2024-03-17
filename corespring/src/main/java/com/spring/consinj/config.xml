@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd"
+    xmlns:c="http://www.springframework.org/schema/c">   
+     
+    <bean class="com.spring.consinj.Person" name="person1">
+		
+		<constructor-arg>
+			<value>Shreya Santra</value>
+		</constructor-arg>
+		
+		<constructor-arg value="101" type="int" index="1"/>
+		<constructor-arg ref="bill1"/>
+		<constructor-arg>
+			<list>
+				<value>1234567890</value>
+				<value>2345678901</value>
+				<value>3456789012</value>
+			</list>
+		</constructor-arg>
+	</bean> 
+	
+	<bean class="com.spring.consinj.Bill" name="bill1">
+		<constructor-arg value="Abc1"/>
+	</bean>
+	
+	<!-- 
+	<bean class="com.spring.consinj.Bill" name="bill1" c:billId = "Abc1">	
+	</bean>
+	-->
+</beans>

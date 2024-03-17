@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">    
+
+	<bean class="com.spring.collection.Teacher" name="teacher1">
+		<property name="phones">
+			<list>
+				<value>9876543219</value>
+			</list>
+		</property>
+		
+		<property name="office">
+			<list>
+				<value>EG</value>
+			</list>
+		</property>
+		
+		<property name="courses">
+			<map>
+				<entry key="MERN" value="3000"/>
+				<entry key="Spring" value="3500"/>
+				<entry key="AIML" value="5000"/>
+			</map>		
+		</property>
+	</bean>
+	
+</beans>
