@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">    
+
+	<bean class="com.myspring.myproject1.Student" name="student1">
+		<!-- name="student1" unique name for this bean, accessible from App.java-->
+		
+		<property name="id">
+			<value>101</value>
+		</property>
+		
+		<property name="name">
+			<value>Shreya</value>
+		</property>
+		
+		<property name="address" ref="address1"/>
+		
+		
+		<!-- Do not put more than 1 object properties in 1 bean-->
+	</bean>
+	
+	<bean class="com.myspring.myproject1.Student" name="student2">
+		<property name="id" value="102"/>
+		<property name="name" value="Sunirmal"/>
+		<property name="address" ref="address2"/>
+		
+	</bean>
+	
+	<!-- P schema-->
+	<bean class="com.myspring.myproject1.Student" name="student3" p:id="103" p:name="Mou">
+		<property name="address" ref="address3"/>
+		
+	</bean>
+	
+	<bean class="com.myspring.myproject1.Address" name="address1" p:street="HIT road" p:city="Howrah" p:state="WB" p:country="IND"/>
+	<bean class="com.myspring.myproject1.Address" name="address2" p:street="Sanpur" p:city="Kolkata" p:state="WB" p:country="IND"/>
+	<bean class="com.myspring.myproject1.Address" name="address3" p:street="Q road" p:city="New York City" p:state="New York" p:country="USA"/>
+
+	<bean class="com.myspring.myproject1.Course" name="course">
+		<property name="student">
+			<list>
+				<ref bean="student1"/>
+				<ref bean="student2"/>
+				<ref bean="student3"/>
+			</list>
+		</property>
+		
+		<property name="fees">
+			<map>
+				<entry key="Subhojit Sir" value="30000"/>	
+				<entry key="Partha Sir" value="31000"/>				
+			</map>
+		</property>
+	</bean>
+</beans>
